@@ -16,7 +16,7 @@ local aimlock = {
 
 if not SilentAim["general configuration"]["sos down"] then 
 	StarterGui:SetCore("SendNotification",{
-	    Title="RLX Silent Aim",
+	    Title="Silent Aim",
 	    Text = "The script refuses to execute because you have the value of sos down set to false"
 	})
     return
@@ -24,7 +24,7 @@ end
 
 if game.PlaceId ~= 2788229376 or LOADED then
 	StarterGui:SetCore("SendNotification",{
-	    Title="RLX Silent Aim",
+	    Title="Silent Aim",
 	    Text = "the game is not da hood / the script has already been executed"
 	})
     return
@@ -32,7 +32,7 @@ end
 
 if SilentAim["general configuration"]["metamethods mode"] and SilentAim["general configuration"]["camera manipulation"] then
     StarterGui:SetCore("SendNotification",{
-	    Title="RLX Silent Aim",
+	    Title="Silent Aim",
 	    Text = "You have both methods activated / activate only one and run again."
 	})
     return
@@ -42,12 +42,12 @@ getgenv().LOADED = true
 
 if SilentAim["general configuration"]["metamethods mode"] then
 	StarterGui:SetCore("SendNotification",{
-		Title="RLX Silent Aim",
+		Title="Silent Aim",
 		Text = "Silent Aim Activated\nMode: metatables position spoofing"
 	})
 elseif SilentAim["general configuration"]["camera manipulation"] then 
 	StarterGui:SetCore("SendNotification",{
-		Title="RLX Silent Aim",
+		Title="Silent Aim",
 		Text = "AIMLOCK ACTIVADO\nMode: camera maniuplation"
 	})
 end 
@@ -55,15 +55,15 @@ end
 wait(1.5)
 
 StarterGui:SetCore("SendNotification",{
-    Title="RLX Silent Aim",
+    Title="Silent Aim",
     Text = "Press the key "..keys.key3.." to activate / disable the silent aim"
 })
 StarterGui:SetCore("SendNotification",{
-    Title="RLX Silent Aim",
+    Title="Silent Aim",
     Text = "Press the key "..keys.key2.." to unlock"
 })
 StarterGui:SetCore("SendNotification",{
-    Title="RLX Silent Aim",
+    Title="Silent Aim",
     Text = "Press the key "..keys.key1.." to lock onto someone\n(put the mouse over the person you want to lock on)"
 })
 
@@ -102,7 +102,7 @@ function suicide(mongolian)
     gay.Humanoid.Died:Connect(function()
         LocalPlayer.CameraMode = Enum.CameraMode.Classic
         StarterGui:SetCore("SendNotification",{
-            Title="RLX Silent Aim",
+            Title="Silent Aim",
             Text = "You've died, the aimlock was deactivated."
         })
     end)
@@ -111,7 +111,7 @@ function suicide(mongolian)
             aimlock.activated = false
             LocalPlayer.CameraMode = Enum.CameraMode.Classic
             StarterGui:SetCore("SendNotification",{
-                Title="RLX Silent Aim",
+                Title="Silent Aim",
                 Text = "You have been knocked, the aimlock was deactivated."
             })
         end
@@ -126,7 +126,7 @@ function died(mongolian)
 				aimlock.victim = nil
 				LocalPlayer.CameraMode = Enum.CameraMode.Classic
 				StarterGui:SetCore("SendNotification",{
-					Title="RLX Silent Aim",
+					Title="Silent Aim",
 					Text = "The one you have locked on has been knocked, unlocked from them."
 				})
 			end
@@ -138,7 +138,7 @@ function died(mongolian)
 			aimlock.victim = nil
 			LocalPlayer.CameraMode = Enum.CameraMode.Classic
 			StarterGui:SetCore("SendNotification",{
-				Title="RLX Silent Aim",
+				Title="Silent Aim",
 				Text = "The one you locked on died, unlocked frm them."
 			})
 		end
@@ -163,7 +163,7 @@ Players.PlayerRemoving:Connect(function(asshole)
     if asshole == aimlock["victim"] then
         aimlock["victim"] = nil
         StarterGui:SetCore("SendNotification",{
-            Title="RLX Silent Aim",
+            Title="Silent Aim",
             Text = "THE RETARD YOU LOCKED ON LEFT HAHAHA XD\nUNLOCKED"
         })
     end
@@ -182,7 +182,7 @@ Mouse.KeyDown:Connect(function(AMONGUS)
             if victim:FindFirstChild("Humanoid") and isautistic(victim) then
                 aimlock.victim = kill_and_violate_his_rotten_body(victim)
                 StarterGui:SetCore("SendNotification",{
-                    Title = "RLX Silent Aim",
+                    Title = "Silent Aim",
                     Text = "Locked on to: "..victim.Name
                 })
                 if victim:FindFirstChild("BodyEffects") and victim.BodyEffects:FindFirstChild("K.O") then 
@@ -197,7 +197,7 @@ Mouse.KeyDown:Connect(function(AMONGUS)
             local previous_victim = aimlock.victim
             aimlock.victim = nil
             StarterGui:SetCore("SendNotification",{
-                Title = "RLX Silent Aim",
+                Title = "Silent Aim",
                 Text = "Unlocked from: "..previous_victim.Name
             })
 	    wait(0.3)
@@ -207,7 +207,7 @@ Mouse.KeyDown:Connect(function(AMONGUS)
         if aimlock.victim == true then
             aimlock.activated = false
             StarterGui:SetCore("SendNotification",{
-                Title = "RLX Silent Aim",
+                Title = "Silent Aim",
                 Text = "Aimlock (false)"
             })
             wait(0.3)
@@ -215,7 +215,7 @@ Mouse.KeyDown:Connect(function(AMONGUS)
         else
             aimlock.activated = true
             StarterGui:SetCore("SendNotification",{
-                Title = "RLX Silent Aim",
+                Title = "Silent Aim",
                 Text = "Aimlock (true)"
             })
         end
@@ -248,8 +248,8 @@ RunService:BindToRenderStep("HONG KONG",Enum.RenderPriority.First.Value,function
 end)
 else
     StarterGui:SetCore("SendNotification",{
-        Title="RLX Silent Aim",
-        Text = "Somehow, none of the options are activated, what the fuck, harry"
+        Title="Silent Aim",
+        Text = "Somehow, none of the options were activated, what the fuck, harry"
     })
     return
 end
